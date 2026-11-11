@@ -91,6 +91,10 @@ function install_kamp(){
         restart_klipper
         ok_msg "Klipper Adaptive Meshing & Purging has been installed successfully!"
         echo -e "   Make sure Label Objects setting is enabled in your slicer."
+        if [ "$model" = "K1" ] && is_cfs_firmware; then
+          echo -e "   ${yellow}CFS:${white} now install CFS KAMP Integration from [Hardware Mods] Menu,"
+          echo -e "   without it the purge line runs before the filament is loaded."
+        fi
         return;;
       N|n)
         error_msg "Installation canceled!"

@@ -1,0 +1,12 @@
+# Scripts and configuration files run on the printer and must keep Unix line endings.
+*.sh text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.py text eol=lf
+files/fixes/* -text
+files/services/* text eol=lf
+files/git-backup/S52Git-Backup text eol=lf
+*.tar.gz binary
+*.so binary
+*.pyc binary
+*.mp3 binary

@@ -56,7 +56,9 @@ function tools_menu_k1() {
           run "allow_updating_klipper_files" "tools_menu_ui_k1"
         fi;;
       3)
-        if [ -f "$KLIPPER_KLIPPY_FOLDER"/gcode.py ]; then
+        if is_cfs_firmware; then
+          error_msg "This fix replaces Klipper gcode.py file and is not compatible with CFS Upgrade Kit firmware!"
+        elif [ -f "$KLIPPER_KLIPPY_FOLDER"/gcode.py ]; then
           run "printing_gcode_from_folder" "tools_menu_ui_k1"
         fi;;
       4)

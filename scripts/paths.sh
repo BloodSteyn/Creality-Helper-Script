@@ -187,6 +187,26 @@ function set_paths() {
   FLUIDD_LOGO_URL2="${HS_FILES}/fluidd-logos/logo_creality_v2.svg"
   FLUIDD_LOGO_URL3="${HS_FILES}/fluidd-logos/config.json"
 
+  # Gantry Profile #
+  GANTRY_BACKUP_FOLDER="${HS_BACKUP_FOLDER}/gantry"
+  GANTRY_PROFILE_FILE="${GANTRY_BACKUP_FOLDER}/current_profile"
+
+  # CFS Upgrade Kit #
+  BOX_CFG="${PRINTER_DATA_FOLDER}/config/box.cfg"
+  ENTWARE_GIT_FILE="/opt/bin/git"
+  SYSTEM_GIT_FILE="/usr/bin/git"
+
+  # CFS KAMP Integration #
+  CFS_KAMP_FOLDER="${USR_DATA}/Creality-K1-CFS-KAMP"
+  CFS_KAMP_URL="https://github.com/cmtergomes/Creality-K1-CFS-KAMP.git"
+
+  # CFS Retrude Before Cut #
+  CFS_RETRUDE_FOLDER="${USR_DATA}/cfs-retrude-before-cut"
+  CFS_RETRUDE_URL="https://github.com/FrederickAlt/CREALITY-K1-AND-K1-MAX-CFS-RETRUDE-BEFORE-CUT-MOD.git"
+  CFS_RETRUDE_BACKUP_FOLDER="${HS_BACKUP_FOLDER}/cfs-retrude"
+  CFS_RETRUDE_FILE="${HS_CONFIG_FOLDER}/cfs-retrude.cfg"
+  CFS_RETRUDE_CFG_URL="${HS_FILES}/cfs/cfs-retrude.cfg"
+
 }
 
 function set_permissions() {

@@ -70,6 +70,9 @@ function main_menu_ui() {
   main_menu_option '5' '[Tools]' 'Menu'
   main_menu_option '6' '[Information]' 'Menu'
   main_menu_option '7' '[System]' 'Menu'
+  if [ "$model" = "K1" ]; then
+    main_menu_option '8' '[Hardware Mods]' 'Menu'
+  fi
   hr
   inner_line
   hr
@@ -157,6 +160,13 @@ function main_menu() {
       7) clear
          system_menu
          break;;
+      8) if [ "$model" = "K1" ]; then
+           clear
+           mods_menu_k1
+           break
+         else
+           error_msg "Please select a correct choice!"
+         fi;;
       Q|q)
          clear; exit 0;;
       *)

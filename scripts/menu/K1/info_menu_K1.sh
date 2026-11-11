@@ -30,6 +30,22 @@ function check_simplyprint_k1() {
   fi
 }
 
+function check_function_k1() {
+  if "$1"; then
+    echo -e "${green}✓"
+  else
+    echo -e "${red}✗"
+  fi
+}
+
+function check_gantry_profile_k1() {
+  if [ -f "$GANTRY_PROFILE_FILE" ]; then
+    cat "$GANTRY_PROFILE_FILE"
+  else
+    echo "Not set by Helper Script"
+  fi
+}
+
 function info_menu_ui_k1() {
   top_line
   title '[ INFORMATION MENU ]' "${yellow}"
@@ -74,6 +90,13 @@ function info_menu_ui_k1() {
   info_line "$(check_file_k1 "$CREALITY_WEB_FILE")" 'Creality Web Interface'
   info_line "$(check_folder_k1 "$GUPPY_SCREEN_FOLDER")" 'Guppy Screen'
   info_line "$(check_file_k1 "$FLUIDD_LOGO_FILE")" 'Creality Dynamic Logos for Fluidd'
+  hr
+  subtitle '•HARDWARE MODS:'
+  info_line "$(check_file_k1 "$GANTRY_PROFILE_FILE")" "Gantry: $(check_gantry_profile_k1)"
+  info_line "$(check_function_k1 is_cfs_firmware)" 'CFS Upgrade Kit Firmware'
+  info_line "$(check_function_k1 entware_git_installed)" 'Entware Git'
+  info_line "$(check_function_k1 cfs_kamp_installed)" 'CFS KAMP Integration'
+  info_line "$(check_function_k1 cfs_retrude_installed)" 'CFS Retrude Before Cut'
   hr
   inner_line
   hr
